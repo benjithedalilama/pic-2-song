@@ -7,7 +7,7 @@ Dependencies include:
 - [PIL](http://effbot.org/zone/pil-index.htm) (image processing package)
 - random (for the randomly generated songs)
 - [pydub](http://stackoverflow.com/a/12391576) (mp3 conversion package)
-- [pysynth](https://mdoege.github.io/PySynth/#u) (package to generating .wav files with notes)
+- [pysynth](https://mdoege.github.io/PySynth/#u) (package to generate .wav files with notes)
 
 ## Examples
 
@@ -68,7 +68,7 @@ would print
 
 The songs by default are 20 notes long; however, you can pass in a length if you want to increase or decrease it like this:
 
-`P2S.generateSong('nigiri.jpg', 50)`
+`P2S.generateSong('nigiri.jpg', nnotes = 50)`
 
 or
 
