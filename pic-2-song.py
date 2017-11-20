@@ -33,7 +33,6 @@ class Pic2SongGenerator():
 
         majorscaleind = random.sample(xrange(len(major)),1)[0] # choose a major scale for the song
         minorscaleind = random.sample(xrange(len(minor)),1)[0] # choose a minor scale for the song
-        # get darkness value here so we dont calculate the same thing n-notes times
 
         if method == 'random':
             for i in xrange(nnotes): # number of notes set by parameter, default is 20
@@ -42,7 +41,8 @@ class Pic2SongGenerator():
                 # just choosing random notes
 
             return notes
-
+        
+        # get darkness value here so we dont calculate the same thing n-notes times
         darkvalue = self.getDarknessValue(imgpath)
 
         for i in xrange(nnotes): # number of notes set by parameter, default is 20
@@ -64,3 +64,7 @@ class Pic2SongGenerator():
         if filetype == 'mp3': # convert wav to mp3 if necessary
             AudioSegment.from_wav(wavfilename).export(mp3filename, format="mp3")
             os.remove(wavfilename)
+
+P2S = Pic2SongGenerator()
+imgpath = 'nigiri.jpg'
+P2S.generateSong(imgpath, 50, 'mp3')
